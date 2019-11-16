@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './screens/login/login.component';
-import { NotfoundComponent } from './screens/notfound/notfound.component';
-import { HomeComponent } from './screens/home/home.component';
 import { DashboardComponent } from './screens/dashboard/dashboard.component';
 import { CreateContactComponent } from './screens/create-contact/create-contact.component';
 import { NotFoundComponent } from './screens/not-found/not-found.component';
@@ -14,8 +12,6 @@ import { NotFoundComponent } from './screens/not-found/not-found.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    NotfoundComponent,
-    HomeComponent,
     DashboardComponent,
     CreateContactComponent,
     NotFoundComponent

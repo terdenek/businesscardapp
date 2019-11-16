@@ -1,1 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+}
+  
+body {
+    background: #fafafa;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Alata', sans-serif;
+}
+
+.color-primary {
+    color: #0E5768;
+}
+.color-secondary {
+    color:#FCE4EB;
+}
+.bg-primary {
+    background-color: #0E5768 !important;
+}
+.bg-secondary {
+    background-color:#FCE4EB !important;
+}
+.p-6 {
+    padding: 6em;
+}
+.flat-card {
+    box-shadow: none;
+    border-radius: 0px;
+    border:none;
+}
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+  
+.form-label-group input {
+    height: auto;
+    border-radius: 4px;
+}
+  
+.form-label-group>input,
+.form-label-group>label {
+    padding: var(--input-padding-y) var(--input-padding-x);
+}
+  
+.form-label-group>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    /* Override default `<label>` margin */
+    line-height: 1.5;
+    color: #888;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+  
+.form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+}
+  
+.form-label-group input:-ms-input-placeholder {
+    color: transparent;
+}
+  
+.form-label-group input::-ms-input-placeholder {
+    color: transparent;
+}
+  
+.form-label-group input::-moz-placeholder {
+    color: transparent;
+}
+  
+.form-label-group input::placeholder {
+    color: transparent;
+}
+  
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+}
+  
+.form-label-group input:not(:placeholder-shown)~label {
+    padding-top: calc(var(--input-padding-y) / 3);
+    padding-bottom: calc(var(--input-padding-y) / 3);
+    font-size: 12px;
+    color: #333;
+}
+.btn-primary {
+    background-color: #0E5768;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #137288;
+}
+.btn {
+    border-radius:4px !important;
+}
