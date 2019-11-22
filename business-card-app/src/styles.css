@@ -14,7 +14,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Alata', sans-serif;
 }
-.navbar {
+.navbar, .btn {
     font-family: 'Alata', sans-serif;
 }
 .color-primary {
