@@ -1,3 +1,4 @@
 
 business-card-app/src/environments/environment.ts
 business-card-app/src/environments/environment.prod.ts
+*.code-workspace
