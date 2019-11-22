@@ -4,12 +4,13 @@ import { LoginComponent } from './screens/login/login.component';
 import { DashboardComponent } from './screens/dashboard/dashboard.component';
 import { CreateContactComponent } from './screens/create-contact/create-contact.component';
 import { NotFoundComponent } from './screens/not-found/not-found.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   // specific screens
-  { path: 'dashboard', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'create', component: CreateContactComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardService]},
+  { path: 'create', component: CreateContactComponent, canActivate:[AuthGuardService] },
   // general
   { path : '', redirectTo:'/dashboard', pathMatch:'full' },
   { path: '**', component: NotFoundComponent },
