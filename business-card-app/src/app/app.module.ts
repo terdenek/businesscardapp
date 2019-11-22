@@ -21,6 +21,7 @@ import { NotFoundComponent } from './screens/not-found/not-found.component';
 // services
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     LoginComponent,
     DashboardComponent,
     CreateContactComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -14,8 +14,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Alata', sans-serif;
 }
-
+.navbar {
+    font-family: 'Alata', sans-serif;
+}
 .color-primary {
+    color: #0E5768;
+}
+a.color-primary:hover {
     color: #0E5768;
 }
 .color-secondary {

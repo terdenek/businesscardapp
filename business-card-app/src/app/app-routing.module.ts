@@ -9,12 +9,11 @@ import { AuthGuardService } from './services/auth-guard.service';
 const routes: Routes = [
   // specific screens
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardService]},
+  { path: '', component: DashboardComponent, canActivate:[AuthGuardService]},
   { path: 'create', component: CreateContactComponent, canActivate:[AuthGuardService] },
   // general
-  { path : '', redirectTo:'/dashboard', pathMatch:'full' },
   { path: '**', component: NotFoundComponent },
-];
+];  
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
