@@ -1,1 +1,75 @@
-<p>create-contact works!</p>
+<div class="dashboard-wrapper">
+    <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+
+    <div class="fluid-container">
+        <div class="row">
+            <div class="col-sm-8" style="margin:auto">
+                <div class="card my-5 bg-transparent flat-card">
+                    <div class="card-body pt-3">
+                        <form class="createContact" (submit)='createContact()'>
+                            <h5 class="card-title pb-2">Create Contact</h5>
+                            <div class="row py-2">
+                                <div class="col-sm-6 text-center">
+                                    <button class="btn">Upload Image</button>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <button class="btn">Use Webcam</button>
+                                </div>
+                            </div>
+                            <!-- First & Last Name -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="inputFirstName" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
+                                        <label for="inputEmail">First Name</label>
+                                    </div>  
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="inputLastName" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
+                                        <label for="inputEmail">Last Name</label>
+                                    </div>  
+                                </div>
+                            </div>
+                            <!-- Email & Phone -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="inputCompanyName" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
+                                        <label for="inputEmail">Company Name</label>
+                                    </div>  
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="inputCompanyRole" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
+                                        <label for="inputEmail">Current Role</label>
+                                    </div>  
+                                </div>
+                            </div>
+                            <!-- Email & Phone -->
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="form-label-group">
+                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
+                                        <label for="inputEmail">Email Address</label>
+                                    </div>  
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="form-label-group">
+                                        <input type="phone" id="inputPhone" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
+                                        <label for="inputEmail">Phone Number</label>
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngIf='errorMessage != nil'>
+                                {{errorMessage}}
+                            </div>
+                
+                            <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Create Contact</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

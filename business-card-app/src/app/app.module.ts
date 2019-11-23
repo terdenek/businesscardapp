@@ -22,6 +22,8 @@ import { NotFoundComponent } from './screens/not-found/not-found.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UtilityBarComponent } from './components/utility-bar/utility-bar.component';
+import { ContactCardComponent } from './components/contact-card/contact-card.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DashboardComponent,
     CreateContactComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    UtilityBarComponent,
+    ContactCardComponent
   ],
   imports: [
     BrowserModule,
