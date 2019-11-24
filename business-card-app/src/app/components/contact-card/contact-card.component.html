@@ -1,12 +1,20 @@
 <div class="card">
     <div class="contact-info">
-        <h5>Temuulen Erdenekhuu</h5>
+        <h5>{{contact.first_name}} {{contact.last_name}}</h5>
         <ul>
-            <li>tem@icodice.com</li>
-            <li>(312) 918-0186</li>
+            <li style='font-weight: 600;'>{{ contact.company }}, {{ contact.title }}</li>
+            <li>
         </ul>
+        <div class='row no-gutters text-left'>
+            <div class='col-6'>
+                {{ contact.email }}
+            </div>
+            <div class='col-6'>
+                {{ contact.phone }}
+            </div>
+        </div>
     </div>
     <div class="business-card">
-        <img src="https://cdn.shopify.com/s/files/1/1348/9685/products/P1010612_grande.JPG?v=1478102698">
+        <img src="{{contact.imageURL}}">
     </div>
 </div>

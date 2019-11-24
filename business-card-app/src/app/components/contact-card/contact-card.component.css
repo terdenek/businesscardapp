@@ -4,18 +4,20 @@
 }
 .contact-info {
     background-color:#333;
-    color:#FFF;
+    color:#e8e8e8;
     padding:4px 10px 8px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
+    font-size:12px;
 }
 .contact-info h5 {
     padding:0px;
     margin:0px;
+    color:#FFF;
 }
 .contact-info ul {
     list-style: none;
-    padding: 2px 0px 0px 10px;
+    padding: 2px 0px 0px 0px;
     margin:0px;
     font-size:12px;
 }

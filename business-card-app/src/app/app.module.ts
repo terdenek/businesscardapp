@@ -24,6 +24,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UtilityBarComponent } from './components/utility-bar/utility-bar.component';
 import { ContactCardComponent } from './components/contact-card/contact-card.component';
+import { ContactService } from './services/contact.service';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { ContactCardComponent } from './components/contact-card/contact-card.com
     AngularFireStorageModule, // storage
     AppRoutingModule,
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
