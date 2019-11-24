@@ -5,7 +5,7 @@
             <div class="col-sm-8" style="margin:auto">
                 <div class="card my-5 bg-transparent flat-card">
                     <div class="card-body pt-3">
-                        <form class="createContact" (submit)='onSubmit()'>
+                        <form class="createContact">
                             <h5 class="card-title pb-2">Create Contact</h5>
                             <div class="row py-2">
                                 <div class="col-sm-6 text-center">
@@ -72,7 +72,7 @@
                                 {{errorMessage}}
                             </div>
                 
-                            <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Create Contact</button>
+                            <button class="btn btn-lg btn-primary btn-block mt-2" type="button" (click)='onSubmit()'>Create Contact</button>
                         </form>
                     </div>
                 </div>

@@ -24,8 +24,10 @@ export class CreateContactComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(e) {
-    e.preventDefault();
+  onSubmit() {
+    this.contactService.createContact(this.contact).then( res => {
+      // TODO: Handle response and do something
+    });
   }
 
   toggleWebcam(status) {

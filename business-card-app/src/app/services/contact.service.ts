@@ -14,4 +14,13 @@ export class ContactService {
     return this.firestore
           .collection("contacts").snapshotChanges();
   }
+
+  createContact(data) {
+    return new Promise<any>((resolve, reject) =>{
+      this.firestore
+          .collection("contacts")
+          .add(data)
+          .then(res => {}, err => reject(err));
+    });
+  }
 }
