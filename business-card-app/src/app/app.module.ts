@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { WebcamModule } from 'ngx-webcam';
 
 import { environment } from '../environments/environment';
 // firebase modules
@@ -42,6 +43,7 @@ import { ContactService } from './services/contact.service';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    WebcamModule,
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule, // auth

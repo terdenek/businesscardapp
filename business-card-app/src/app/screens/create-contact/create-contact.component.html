@@ -1,33 +1,55 @@
 <div class="dashboard-wrapper">
     <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
-
     <div class="fluid-container">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-sm-8" style="margin:auto">
                 <div class="card my-5 bg-transparent flat-card">
                     <div class="card-body pt-3">
-                        <form class="createContact" (submit)='createContact()'>
+                        <form class="createContact" (submit)='onSubmit()'>
                             <h5 class="card-title pb-2">Create Contact</h5>
                             <div class="row py-2">
                                 <div class="col-sm-6 text-center">
-                                    <button class="btn">Upload Image</button>
+                                    <button type="button" class="btn">Upload Image</button>
                                 </div>
                                 <div class="col-sm-6 text-center">
-                                    <button class="btn">Use Webcam</button>
+                                    <button type="button" class="btn" (click)='toggleWebcam(true)'>Use Webcam</button>
+                                </div>
+                            </div>
+                            <div class="row contact-image" *ngIf='webcamImage'>
+                                <div class="col">
+                                    <img [src]="webcamImage.imageAsDataUrl" />
+                                </div>
+                                <div class="col">
+                                    <textarea class="form-control">All the data here</textarea>
                                 </div>
                             </div>
                             <!-- First & Last Name -->
                             <div class="row">
+                                <div class="col">
+                                    <div class="form-label-group">
+                                        <input type="text" id="inputFirstName" class="form-control" placeholder="First Name" name="firstName" required autofocus [(ngModel)]="contact.firstName">
+                                        <label for="inputFirstName">First Name</label>
+                                    </div>  
+                                </div>
+                                <div class="col">
+                                    <div class="form-label-group">
+                                        <input type="text" id="inputLastName" class="form-control" placeholder="Last name" name="lastName" required [(ngModel)]="contact.lastName">
+                                        <label for="inputLastName">Last Name</label>
+                                    </div>  
+                                </div>
+                            </div>
+                            <!-- Email & Phone -->
+                            <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-label-group">
-                                        <input type="text" id="inputFirstName" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
-                                        <label for="inputEmail">First Name</label>
+                                        <input type="text" id="inputCompanyName" class="form-control" placeholder="Company Name" name="companyName" required [(ngModel)]="contact.companyName">
+                                        <label for="inputCompanyName">Company Name</label>
                                     </div>  
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-label-group">
-                                        <input type="text" id="inputLastName" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
-                                        <label for="inputEmail">Last Name</label>
+                                        <input type="text" id="inputCompanyRole" class="form-control" placeholder="Current role" name="role" required [(ngModel)]="contact.role">
+                                        <label for="inputCompanyRole">Current Role</label>
                                     </div>  
                                 </div>
                             </div>
@@ -35,29 +57,14 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-label-group">
-                                        <input type="text" id="inputCompanyName" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
-                                        <label for="inputEmail">Company Name</label>
-                                    </div>  
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-label-group">
-                                        <input type="text" id="inputCompanyRole" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
-                                        <label for="inputEmail">Current Role</label>
-                                    </div>  
-                                </div>
-                            </div>
-                            <!-- Email & Phone -->
-                            <div class="row">
-                                <div class="col-sm-7">
-                                    <div class="form-label-group">
-                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
+                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="contact.email" required [(ngModel)]="email">
                                         <label for="inputEmail">Email Address</label>
                                     </div>  
                                 </div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-6">
                                     <div class="form-label-group">
-                                        <input type="phone" id="inputPhone" class="form-control" placeholder="Email address" name="email" required autofocus [(ngModel)]="email">
-                                        <label for="inputEmail">Phone Number</label>
+                                        <input type="phone" id="inputPhone" class="form-control" placeholder="Phone number" name="phoneNumber" required [(ngModel)]="contact.phone">
+                                        <label for="inputPhone">Phone Number</label>
                                     </div>  
                                 </div>
                             </div>
@@ -69,6 +76,24 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class='webcam-container' *ngIf='showWebcam'>
+    <div class="container pt-5">
+        <div class="row text-center">
+            <div class="col py-3">
+                <button class="btn btn-block btn-danger" (click)='toggleWebcam(false);'> Hide Webcam </button>
+            </div>
+            <div class="col py-3">
+                <button class="btn btn-block btn-primary" (click)='triggerSnapshot()'> Take Image </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <webcam [trigger]='webcamTriggerObservable' (imageCapture)='handleImageCapture($event)' [imageQuality]="1"></webcam>
             </div>
         </div>
     </div>

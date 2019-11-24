@@ -1,3 +1,6 @@
+.navbar {
+  box-shadow: 0px 2px 10px rgba(252,228,235,0.15);
+}
 .navbar-brand {
     font-weight: 600;
 }

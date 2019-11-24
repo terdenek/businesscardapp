@@ -13,6 +13,8 @@ export class Contact {
     email: string;
     phone: string;
     fax: string;
+
+    rawData: string;
     
     companyName: string;
     companyWebsite: string;
