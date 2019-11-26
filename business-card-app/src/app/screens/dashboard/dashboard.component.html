@@ -1,8 +1,8 @@
 <div class="dashboard-wrapper">
-    <app-utility-bar></app-utility-bar>
+    <app-utility-bar [contactCount]='listContacts().length' (search)='searchContacts($event)'></app-utility-bar>
     <div class="container-fluid contact-list bg-secondary" >
         <div class="row">
-            <div class="col-sm-3" *ngFor='let contact of contacts'>
+            <div class="col-sm-3" *ngFor='let contact of listContacts()'>
                 <app-contact-card [contact]='contact.payload.doc'></app-contact-card>
             </div>
         </div>

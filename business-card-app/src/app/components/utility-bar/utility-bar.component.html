@@ -1,9 +1,12 @@
 <div class="container utility-belt">
     <div class="row">
-        <div class="col-sm-6">
-            <h3>My Contacts</h3>
+        <div class="col-sm-4">
+            <h3>My Contacts <span *ngIf='contactCount'>({{contactCount}})</span></h3>
         </div>
-        <div class="col-sm-6 text-right">
+        <div class="col-sm-4">
+            <input type="text" id="search-bar" class="form-control" placeholder="Search my cards" [ngModel]='searchTerm' (keyup)='onSearchChange()'/>
+        </div>
+        <div class="col-sm-4 text-right">
             <a href="/create">
                 <div class="btn btn-lg btn-primary utility-btn">
                     Add New Contact

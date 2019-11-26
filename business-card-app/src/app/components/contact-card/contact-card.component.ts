@@ -15,14 +15,16 @@ export class ContactCardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.contact);
+    // console.log(this.contact);
   }
 
   deleteContact() {
-    console.log(this.contact.id);
-    this.contactService.deleteContact(this.contact.id).then( res => {
-      // console.log(res);
-    });
+    // console.log(this.contact.id);
+    if(confirm('Are you sure you want to delete this contact?')) {
+      this.contactService.deleteContact(this.contact.id).then( res => {
+        // console.log(res);
+      });
+    }
   }
 
   editContact() {

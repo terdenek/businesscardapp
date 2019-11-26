@@ -13,7 +13,7 @@ export class ContactService {
 
   getContacts() {
     return this.firestore
-          .collection("contacts").snapshotChanges();
+    .collection("contacts").snapshotChanges();
   }
 
   createContact(contact: Contact) {
