@@ -26,6 +26,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UtilityBarComponent } from './components/utility-bar/utility-bar.component';
 import { ContactCardComponent } from './components/contact-card/contact-card.component';
 import { ContactService } from './services/contact.service';
+import { OcrApiService } from './services/ocrapi.service';
 
 
 @NgModule({
@@ -51,7 +52,7 @@ import { ContactService } from './services/contact.service';
     AngularFireStorageModule, // storage
     AppRoutingModule,
   ],
-  providers: [AuthService, AuthGuardService, ContactService],
+  providers: [AuthService, AuthGuardService, ContactService, OcrApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

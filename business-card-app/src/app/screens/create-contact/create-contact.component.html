@@ -9,18 +9,22 @@
                             <h5 class="card-title pb-2">Create Contact</h5>
                             <div class="row py-2">
                                 <div class="col-sm-6 text-center">
-                                    <button type="button" class="btn">Upload Image</button>
+                                    <button (click)="uploadFile()" type="button" class="btn">Upload Image</button>
+                                    <div style="height: 0px;overflow: hidden;"> 
+                                        <input id="file-upload" type="file" (change)="onFileChange($event)" accept='image/*'>
+                                    </div>
                                 </div>
                                 <div class="col-sm-6 text-center">
                                     <button type="button" class="btn" (click)='toggleWebcam(true)'>Use Webcam</button>
                                 </div>
                             </div>
-                            <div class="row contact-image" *ngIf='webcamImage'>
+                            <div class="row contact-image" *ngIf='webcamImage || fileImageURL'>
                                 <div class="col">
-                                    <img [src]="webcamImage.imageAsDataUrl" />
+                                    <img *ngIf='webcamImage' id='contact-image' [src]="webcamImage.imageAsDataUrl" (load)='onImageUploaded()' />
+                                    <img *ngIf='fileImageURL' id='contact-image' [src]="fileImageURL" (load)='onImageUploaded()'/>
                                 </div>
                                 <div class="col">
-                                    <textarea class="form-control">All the data here</textarea>
+                                    <textarea class="form-control">{{contact.rawData}}</textarea>
                                 </div>
                             </div>
                             <!-- First & Last Name -->
@@ -57,7 +61,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-label-group">
-                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="contact.email" required [(ngModel)]="email">
+                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required [(ngModel)]="contact.email">
                                         <label for="inputEmail">Email Address</label>
                                     </div>  
                                 </div>
