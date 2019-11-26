@@ -20,6 +20,7 @@ export class Contact {
     companyName: string;
     companyWebsite: string;
     companyAddress: string;
+    imageBase64: string;
 
     attachments: Attachment[];
 

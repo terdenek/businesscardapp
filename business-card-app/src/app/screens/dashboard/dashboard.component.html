@@ -1,8 +1,10 @@
 <div class="dashboard-wrapper">
     <app-utility-bar></app-utility-bar>
-    <div class="container-fluid contact-list bg-secondary" *ngFor='let contact of contacts'>
-        <div class="col-3">
-            <app-contact-card [contact]='contact.payload.doc.data()'></app-contact-card>
+    <div class="container-fluid contact-list bg-secondary" >
+        <div class="row">
+            <div class="col-sm-3" *ngFor='let contact of contacts'>
+                <app-contact-card [contact]='contact.payload.doc.data()'></app-contact-card>
+            </div>
         </div>
     </div>
 </div>

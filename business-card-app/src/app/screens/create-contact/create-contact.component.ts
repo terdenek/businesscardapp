@@ -5,6 +5,7 @@ import { WebcamImage } from 'ngx-webcam';
 import { Subject, Observable } from 'rxjs';
 import { OcrApiService } from 'src/app/services/ocrapi.service';
 import domtoimage from 'dom-to-image';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-contact',
@@ -22,7 +23,8 @@ export class CreateContactComponent implements OnInit {
 
   constructor(
     private contactService: ContactService,
-    private ocrApiService: OcrApiService
+    private ocrApiService: OcrApiService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -31,6 +33,8 @@ export class CreateContactComponent implements OnInit {
   onSubmit() {
     this.contactService.createContact(this.contact).then( res => {
       // TODO: Handle response and do something
+      console.log(res);
+      this.router.navigateByUrl('/');
     });
   }
   // MARK: Webcam handler
@@ -81,6 +85,7 @@ export class CreateContactComponent implements OnInit {
           if(res.responses[0]) {
             // since this was for a test, went with the assumption that these are top down business cards
             this.contact = new Contact();
+            this.contact.imageBase64 = base64String;
             this.contact.tryParseOCR(res.responses[0].fullTextAnnotation.text);
           }
         },

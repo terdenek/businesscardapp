@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Contact } from '../models/contact';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,20 @@ export class ContactService {
           .collection("contacts").snapshotChanges();
   }
 
-  createContact(data) {
+  createContact(contact: Contact) {
     return new Promise<any>((resolve, reject) =>{
       this.firestore
           .collection("contacts")
-          .add(data)
+          .add({
+            first_name: contact.firstName ? contact.firstName : '',
+            last_name: contact.lastName ? contact.lastName : '',
+            company: contact.companyName ? contact.companyName : '',
+            title: contact.role ? contact.role : '',
+            email: contact.email ? contact.email : '',
+            phone: contact.phone ? contact.phone : '',
+            imageURL: contact.imageBase64,
+            rawData: contact.rawData
+          })
           .then(res => {}, err => reject(err));
     });
   }
