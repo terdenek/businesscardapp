@@ -1,20 +1,32 @@
 <div class="card">
     <div class="contact-info">
-        <h5>{{contact.first_name}} {{contact.last_name}}</h5>
+        <div class='row no-gutters'>
+            <div class='col-10'>
+                <h5>{{contact.data().first_name}} {{contact.data().last_name}}</h5>
+            </div>
+            <div class='col-2 text-right contact-tools'>
+                <a href='#' (click)='editContact()' class='color-secondary'>
+                    <i class='las la-2x la-edit'></i>
+                </a>
+                <a href='#' (click)='deleteContact()' class='color-secondary'>
+                    <i class='las la-2x la-trash'></i>
+                </a>
+            </div>
+        </div>
         <ul>
-            <li style='font-weight: 600;'>{{ contact.company }}, {{ contact.title }}</li>
+            <li style='font-weight: 600;'>{{ contact.data().company }}, {{ contact.data().title }}</li>
             <li>
         </ul>
         <div class='row no-gutters text-left'>
             <div class='col-6'>
-                {{ contact.email }}
+                {{ contact.data().email }}
             </div>
             <div class='col-6'>
-                {{ contact.phone }}
+                {{ contact.data().phone }}
             </div>
         </div>
     </div>
     <div class="business-card">
-        <img src="{{contact.imageURL}}">
+        <img src="{{contact.data().imageURL}}">
     </div>
 </div>

@@ -32,21 +32,19 @@ export class CreateContactComponent implements OnInit {
 
   onSubmit() {
     this.contactService.createContact(this.contact).then( res => {
-      // TODO: Handle response and do something
+      console.log("got response");
       console.log(res);
       this.router.navigateByUrl('/');
     });
   }
   // MARK: Webcam handler
   toggleWebcam(status) {
-    console.log("toggleWebcam", status);
     this.showWebcam = status;
   }
   triggerSnapshot(): void {
     this.trigger.next();
   }
   handleImageCapture(webcamImage: WebcamImage): void {
-    console.info('received webcam image', webcamImage);
     this.webcamImage = webcamImage;
     this.showWebcam = false;
     this.fileImageURL = null;

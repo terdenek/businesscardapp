@@ -17,8 +17,7 @@ export class ContactService {
   }
 
   createContact(contact: Contact) {
-    return new Promise<any>((resolve, reject) =>{
-      this.firestore
+    return this.firestore
           .collection("contacts")
           .add({
             first_name: contact.firstName ? contact.firstName : '',
@@ -29,8 +28,12 @@ export class ContactService {
             phone: contact.phone ? contact.phone : '',
             imageURL: contact.imageBase64,
             rawData: contact.rawData
-          })
-          .then(res => {}, err => reject(err));
-    });
+          });
+  }
+
+  deleteContact(contactId: string) {
+    return this.firestore
+      .collection("contacts")
+      .doc(contactId).delete();
   }
 }

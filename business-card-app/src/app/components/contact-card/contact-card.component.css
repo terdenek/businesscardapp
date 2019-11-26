@@ -28,3 +28,6 @@
 .business-card {
     padding:10px;
 }
+.contact-tools a:hover {
+    color:#FFF;
+}
