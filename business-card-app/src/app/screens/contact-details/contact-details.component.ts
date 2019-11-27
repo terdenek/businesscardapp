@@ -32,6 +32,7 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
             this.contact.firstName = data.first_name;
             this.contact.lastName = data.last_name;
             this.contact.companyName = data.company;
+            this.contact.email = data.email;
             this.contact.phone = data.phone;
             this.contact.role = data.title;
             this.contact.rawData = data.rawData;
