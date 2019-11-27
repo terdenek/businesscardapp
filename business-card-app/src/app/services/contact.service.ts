@@ -16,6 +16,25 @@ export class ContactService {
     .collection("contacts").snapshotChanges();
   }
 
+  getContactById(contactId) {
+    return this.firestore.collection('contacts').doc(contactId).get();
+  }
+
+  updateContact(contact: Contact) {
+    return this.firestore.collection('contacts').doc(contact.id).update(
+      {
+        first_name: contact.firstName ? contact.firstName : '',
+        last_name: contact.lastName ? contact.lastName : '',
+        company: contact.companyName ? contact.companyName : '',
+        title: contact.role ? contact.role : '',
+        email: contact.email ? contact.email : '',
+        phone: contact.phone ? contact.phone : '',
+        imageURL: contact.imageBase64,
+        rawData: contact.rawData
+      }
+    );
+  }
+
   createContact(contact: Contact) {
     return this.firestore
           .collection("contacts")

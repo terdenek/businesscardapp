@@ -1,1 +1,77 @@
-<p>contact-details works!</p>
+<div class='fluid-container'>
+    <div *ngIf='isLoading' class='text-center p-5'>
+        <div class='spinner-border m-5' role='status'>
+            <span class='sr-only'> Loading... </span>
+        </div>
+    </div>
+    <div *ngIf='!isLoading'>
+        <div class='card my-5 bg-transparent flat-card'>
+            <div class='card-body pt-3'>
+                <div class='row no-gutters'>
+                    <div class='col-sm-8' style='margin:auto;'>
+                        <h5 class="card-title pb-2">Edit Contact</h5>
+                        <div class='row'>
+                            <div class='col-sm-4 contact-image'>
+                                <img [src]='contact.imageBase64'/>
+                                <br/>
+                                <label for='raw-data'>Raw data</label>
+                                <textarea class="form-control">{{contact.rawData}}</textarea>
+                            </div>
+                            <div class='col-sm-8'>
+                                <div class='row'>
+                                    <div class="col">
+                                        <div class="form-label-group">
+                                            <input type="text" id="inputFirstName" class="form-control" placeholder="First Name" name="firstName" required autofocus [(ngModel)]="contact.firstName">
+                                            <label for="inputFirstName">First Name</label>
+                                        </div>  
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-label-group">
+                                            <input type="text" id="inputLastName" class="form-control" placeholder="Last name" name="lastName" required [(ngModel)]="contact.lastName">
+                                            <label for="inputLastName">Last Name</label>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <!-- Email & Phone -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-label-group">
+                                            <input type="text" id="inputCompanyName" class="form-control" placeholder="Company Name" name="companyName" required [(ngModel)]="contact.companyName">
+                                            <label for="inputCompanyName">Company Name</label>
+                                        </div>  
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-label-group">
+                                            <input type="text" id="inputCompanyRole" class="form-control" placeholder="Current role" name="role" required [(ngModel)]="contact.role">
+                                            <label for="inputCompanyRole">Current Role</label>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <!-- Email & Phone -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-label-group">
+                                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required [(ngModel)]="contact.email">
+                                            <label for="inputEmail">Email Address</label>
+                                        </div>  
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-label-group">
+                                            <input type="phone" id="inputPhone" class="form-control" placeholder="Phone number" name="phoneNumber" required [(ngModel)]="contact.phone">
+                                            <label for="inputPhone">Phone Number</label>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger" role="alert" *ngIf='errorMessage != nil'>
+                                    {{errorMessage}}
+                                </div>
+                    
+                                <button class="btn btn-lg btn-primary btn-block mt-2" type="button" (click)='onSubmit()'>Save Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

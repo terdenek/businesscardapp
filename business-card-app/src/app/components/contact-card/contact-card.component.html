@@ -5,7 +5,7 @@
                 <h5>{{contact.data().first_name}} {{contact.data().last_name}}</h5>
             </div>
             <div class='col-2 text-right contact-tools'>
-                <a href='#' (click)='editContact()' class='color-secondary'>
+                <a href='/contact/{{contact.id}}' class='color-secondary'>
                     <i class='las la-2x la-edit'></i>
                 </a>
                 <a href='#' (click)='deleteContact()' class='color-secondary'>

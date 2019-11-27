@@ -4,7 +4,6 @@ import { ContactService } from 'src/app/services/contact.service';
 import { WebcamImage } from 'ngx-webcam';
 import { Subject, Observable } from 'rxjs';
 import { OcrApiService } from 'src/app/services/ocrapi.service';
-import domtoimage from 'dom-to-image';
 import { Router } from '@angular/router';
 
 @Component({

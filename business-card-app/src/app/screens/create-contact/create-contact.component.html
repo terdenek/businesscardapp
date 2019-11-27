@@ -24,7 +24,7 @@
                                     <img *ngIf='fileImageURL' id='contact-image' [src]="fileImageURL" (load)='onImageUploaded()'/>
                                 </div>
                                 <div class="col">
-                                    <textarea class="form-control">{{contact.rawData}}</textarea>
+                                    <textarea name='raw-data' class="form-control">{{contact.rawData}}</textarea>
                                 </div>
                             </div>
                             <!-- First & Last Name -->

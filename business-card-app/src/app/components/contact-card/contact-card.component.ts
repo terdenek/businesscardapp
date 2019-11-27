@@ -28,6 +28,6 @@ export class ContactCardComponent implements OnInit {
   }
 
   editContact() {
-
+    
   }
 }

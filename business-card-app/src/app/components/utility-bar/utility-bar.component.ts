@@ -16,7 +16,7 @@ export class UtilityBarComponent implements OnInit {
   }
 
   onSearchChange() {
-    const dom = document.getElementById('search-bar');
+    const dom = document.getElementById('search-bar') as HTMLInputElement;
     this.search.emit(dom.value);
   }
 }
